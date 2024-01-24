@@ -11,7 +11,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   const handleSearch = useDebouncedCallback((term) => {
     const params = new URLSearchParams(searchParams);
-    params.get('page', '1'); // 새로운 검색 쿼리를 작성했을 때, 1 페이지로 돌아가도록 함
+    params.set('page', '1'); // 새로운 검색 쿼리를 작성했을 때, 1 페이지로 돌아가도록 함
 
     if (term) {
       params.set('query', term);
